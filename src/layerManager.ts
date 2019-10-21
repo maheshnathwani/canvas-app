@@ -2,6 +2,10 @@ import {Layer} from "./layer";
 import {ElementMap} from "./element-map";
 import {Rectangle} from "./rectangle";
 
+/**
+ * Manages all the layers and the operations pertaining to it.
+ * Even takes care of the copy paste event of the layer
+ */
 export class LayerManager {
     layers: any = {};
     activeLayer: string;

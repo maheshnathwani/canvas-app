@@ -3,7 +3,9 @@ import {Rectangle} from "./rectangle";
 import {AnchorType, DragAnchor} from "./drag-anchor";
 import {DragCenter} from "./drag-center";
 
-
+/**
+ * Canvas - This class deals with the canvas object for each layer and is mapped with the layer.
+ */
 export class Canvas {
     canvas: HTMLCanvasElement;
     context: CanvasRenderingContext2D;
@@ -17,6 +19,11 @@ export class Canvas {
     centerAnchor: DragCenter;
     rectangle: Rectangle;
     zIndex: number;
+
+    /**
+     * @param id
+     * @param rectangle (optional) Used for copying a layer
+     */
     constructor(id: number, rectangle?: Rectangle) {
         this.zIndex = id;
         this.containerEl = document.getElementById(ElementMap.canvasContainer);
@@ -27,6 +34,10 @@ export class Canvas {
         }
     }
 
+    /**
+     * Creates canvas sheet and attaches a context to it
+     * Registers all the events related to the canvas
+     */
     createSheet() {
         this.canvasContainer = document.createElement('div');
         this.canvasContainer.classList.add('canvas');
@@ -41,6 +52,10 @@ export class Canvas {
         this.initializeAnchors();
         this.registerEvents();
     }
+
+    /**
+     * Initializes the resize and drag anchors
+     */
     initializeAnchors() {
         this.anchors.push(new DragAnchor(0, 0, AnchorType.TOP_LEFT));
         this.anchors.push(new DragAnchor(0, 0, AnchorType.TOP_RIGHT));
@@ -51,6 +66,10 @@ export class Canvas {
         this.centerAnchor = new DragCenter();
         this.canvasContainer.appendChild(this.centerAnchor.getElement());
     }
+
+    /**
+     * Called everytime the shape is modified, sets the anchors on the latest shape
+     */
     drawAnchors() {
         this.anchors[0].setPosition(this.rectangle.x, this.rectangle.y);
         this.anchors[1].setPosition(this.rectangle.x + this.rectangle.width, this.rectangle.y);

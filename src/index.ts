@@ -1,7 +1,9 @@
 import './styles/style.scss';
 import {LayerManager} from "./layerManager";
-
+// Instantiate the LayerManager Object as a Global Object
 const layerManager = new LayerManager();
+
+// Add listeners to various events pertaining to sheet and the layer
 document.getElementById('clearSheet').addEventListener('click', () => {
     layerManager.clearSheet()
 });

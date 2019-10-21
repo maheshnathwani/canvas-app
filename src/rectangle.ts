@@ -1,3 +1,6 @@
+/**
+ * Rectangle class, stores in the rectangle position and it's height and width
+ */
 export class Rectangle {
     x0: number;
     y0: number;

@@ -2,6 +2,10 @@ import {Rectangle} from "./rectangle";
 
 const ANCHOR_SIZE = 20;
 
+/**
+ * Anchor used to drag the element
+ * Loaded once the shape is modified
+ */
 export class DragCenter {
     x: number;
     y: number;

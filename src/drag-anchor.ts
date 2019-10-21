@@ -5,6 +5,11 @@ export enum AnchorType {
     BOTTOM_RIGHT = 'se'
 }
 const ANCHOR_SIZE = 10;
+
+/**
+ * Anchor object used to resize the shape
+ * Consists of 4 different types based on it's position defined in AnchorType
+ */
 export class DragAnchor {
     x: number;
     y: number;

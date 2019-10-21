@@ -1,6 +1,9 @@
 import {Canvas} from "./canvas";
 import {Rectangle} from "./rectangle";
 
+/**
+ * Layer consists of one shape at a time, it's dependent on the canvas object
+ */
 export class Layer {
     layerName: string;
     element: Element;
