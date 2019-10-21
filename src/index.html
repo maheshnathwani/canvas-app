@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+</head>
+
+<body>
+  <div class="row">
+    <div class="two columns side-bar-container">
+      <ul class="menu">
+<!--        <li class="menu-item" id="newSheet">New Sheet</li>-->
+        <li class="menu-item" id="clearSheet">Clear Sheet</li>
+        <li class="menu-item">
+          <b>Layers</b>
+          <small class="u-pull-right">
+            <button class="button button-primary" id="addLayer">Add</button>
+          </small>
+          <ul class="layers" id="layers"></ul>
+        </li>
+      </ul>
+      <p id="instruction">Use Ctrl+C to copy the Layer and Ctrl+V to paste it.</p>
+    </div>
+    <div class="ten columns canvas-panel">
+      <div id="canvas-container"></div>
+    </div>
+  </div>
+
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+
+</html>
